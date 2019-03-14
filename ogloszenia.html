@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Portal ogłoszeniowy</title>
+<link rel="stylesheet" href="styl5.css">
+
+<script>
+
+function oblicz()
+{   
+    var cena="";
+    var c;
+
+    var liczba=parseInt(document.getElementById("licz").value);
+    if(isNaN(liczba)||liczba==0)
+    {
+        alert("Błędne dane!");
+        document.getElementById("wynik").innerText="";
+    }else
+    {
+         if(liczba>=50)
+    {
+        c=1;
+    }else
+    {
+        c=2;
+    }
+    if(document.getElementById('upust').checked==true)
+    c-=0.2;
+
+    cena=liczba*c;
+       document.getElementById("wynik").innerText="Koszt ogłoszeń: "+cena+" PLN.";
+    }
+   
+
+    
+}
+</script>
+</head>
+
+<body>
+<header>
+        Portal Ogłoszeniowy
+</header>
+<section>
+    <div class="info"><img class="logo-male" src="logo-male.png"></div>
+    <div class="info">Adres: <div class="info-text">ul. Morska 45<br> Gdynia</div></div>
+    <div class="info">Telefon: <div class="info-text">601601601</div></div>
+    <div class="info">E-mail:<div class="info-text">ogloszenia@poczta.pl</div></div>
+    <div style="clear:both"></div>
+    
+</section>
+<section>
+    <div class="mid"> <div class="title">Ceny ogłoszeń:</div>
+         <table>
+             <tr>
+                 <td>Liczba ogłoszeń:</td>
+                 <td>Cena ogłoszenia:</td>
+                 <td>Bonus:</td>
+             </tr>
+             <tr>
+                 <td>1-50</td>
+                 <td>2 PLN</td>
+                 <td rowspan="2"> Subskrypcja newsletter to upust 0,20 PLN na ogłoszeniu</td>
+             </tr>
+             <tr>
+                 <td>51 i więcej</td>
+                 <td>1 PLN</td>
+                 
+             </tr>
+         </table>
+    </div>
+    <div class="center"><div class="title">Witamy na stronie naszego portalu! </div><img class="logo-duze" src="logo-duze-poskalowaniu.png" alt="ogłoszenia"></div>
+    <div class="mid">
+            <div class="title">Ile kosztuje ogłoszenie?</div>
+            <form>
+                   <label>Podaj liczbę ogłoszeń:<br>
+                       <input type="number" id="licz" min="1">
+                   </label>
+                   <br>
+                   <label>
+                       <input type="checkbox" id="upust"> Policz upust na newsletter
+                   </label>
+                   <br>
+                   <input type="button" class="button" onclick="oblicz()" value="Oblicz">
+            </form>
+         <br><br>
+         <div id="wynik" class="title">
+
+         </div>
+
+    </div>
+    <div style="clear:both"></div>
+    
+</section>
+<footer>
+        Portal ogłoszeniowy opracował: a
+
+</footer>
+</body>
+
+</html>
